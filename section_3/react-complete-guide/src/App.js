@@ -4,6 +4,16 @@ import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
+  // You can only use this in component that extends Component
+  // State will re-render the DOM
+  state = {
+    persons: [
+      { name: 'Max', age: 28 },
+      { name: 'Manu', age: 28 },
+      { name: 'Stephanie', age: 22 }
+    ]
+  }
+
   render() {
     return (
       // Can't use class because it is a js keyword, instead use className
@@ -12,9 +22,10 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
-        <Person name="Max" age="28"/>
-        <Person name="Manu" age="38">My Hobbies: Racing</Person>
-        <Person name="Stephanie" age="22"/>
+        <button>Switch Name</button>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>My Hobbies: Racing</Person>
+        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
       </div>
     );
 
