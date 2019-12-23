@@ -39,6 +39,14 @@ class App extends Component {
   }
 
   render() {
+
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1x solid blue',
+      padding: '8px'
+    };
+
     // Can't use class because it is a js keyword, instead use className
     // In the end, it gets translated into class
     // Typically, you want to wrap everything into one element
@@ -46,7 +54,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
-        <button onClick={() => this.switchNameHandler('Maximilian!!')}>Switch Name</button>
+        <button
+          style={style}
+          onClick={() => this.switchNameHandler('Maximilian!!')}>Switch Name</button>
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
