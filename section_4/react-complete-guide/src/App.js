@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 // Can omit the js in the Person file
 import Person from './Person/Person';
+import person from './Person/Person';
 
 class App extends Component {
   state = {
@@ -24,6 +25,15 @@ class App extends Component {
     });
   }
 
+  deletePersonHandler = (personIndex) => {
+    // Slice method copies the whole array into a new one instead of using a pointer
+    // const persons = this.state.persons.slice();
+    // This is an alternative method (more common)
+    const persons = [...this.state.persons] 
+    persons.splice(personIndex, 1);
+    this.setState({persons: persons});
+  }
+
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({showPersons: !doesShow});
@@ -43,8 +53,9 @@ class App extends Component {
     if (this.state.showPersons === true) {
       persons = (
         <div>
-          {this.state.persons.map(person => {
+          {this.state.persons.map((person, index) => {
             return <Person
+                    click={() => this.deletePersonHandler(index)}
                     name={person.name}
                     age={person.age} />
           })}
