@@ -18,11 +18,11 @@ const StyleDiv = styled.div`
 // Same as the filename
 // For the js {} part, it needs to be one line expressions like function calls or calculations 
 const person = (props) => {
-    const style = {
-        '@media (min-width: 500px)': {
-            width: '450px'
-        }
-    };
+    // const style = {
+    //     '@media (min-width: 500px)': {
+    //         width: '450px'
+    //     }
+    // };
     return (
         //<div className="Person" style={style}>
         <StyleDiv>
