@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Radium from 'radium'
 // Can omit the js in the Person file
 import Person from './Person/Person';
 
@@ -54,7 +55,11 @@ class App extends Component {
       color: 'white',
       font: 'inherit',
       border: '1x solid blue',
-      padding: '8px'
+      padding: '8px',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      } // Need to wrap sudo selector in quotes to use them with radium
     };
 
     let persons = null;
@@ -74,6 +79,10 @@ class App extends Component {
       );
 
       style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     }
 
     //let classes = ['red', 'bold'].join(' '); // "red bold"
@@ -107,4 +116,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default Radium(App);

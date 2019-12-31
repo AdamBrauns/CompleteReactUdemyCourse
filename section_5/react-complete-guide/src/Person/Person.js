@@ -1,5 +1,6 @@
 import React from 'react';
 import './Person.css';
+import Radium from 'radium'
 
 // Same as the filename
 // For the js {} part, it needs to be one line expressions like function calls or calculations 
@@ -13,4 +14,4 @@ const person = (props) => {
     )
 }
 
-export default person;
+export default Radium(person);
