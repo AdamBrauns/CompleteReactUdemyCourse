@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium, {StyleRoot} from 'radium';
 // Can omit the js in the Person file
 import Person from './Person/Person';
 
@@ -98,7 +97,6 @@ class App extends Component {
     // In the end, it gets translated into class
     // Typically, you want to wrap everything into one element
     return (
-      <StyleRoot>
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(' ')}>This is really working!</p>
@@ -107,7 +105,6 @@ class App extends Component {
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
-      </StyleRoot>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
@@ -118,4 +115,4 @@ class App extends Component {
 
 }
 
-export default Radium(App);
+export default App;
