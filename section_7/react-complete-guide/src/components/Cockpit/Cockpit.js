@@ -7,7 +7,15 @@ const cockpit = (props) => {
   useEffect(() => {
     console.log('[Cockpit.js] useEffect');
     // Http request...
-  });
+    setTimeout(() => {
+      alert('Saved data to cloud!')
+    }, 1000);
+  // this will run whenever props.persons change. [] runs only the first time
+  //}, [props.persons]);
+  }, []);
+
+  // useEffect can be run more than once
+  // useEffect();
 
     const assignedClasses = [];
     let btnClass = ''
