@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropType from 'prop-types';
 
 import Auxilliary from '../../../hoc/Auxilliary';
 import withClass from '../../../hoc/withClass';
@@ -21,6 +22,13 @@ class Person extends Component {
       </Fragment>
     );
   }
+};
+
+Person.prototype = {
+  click: PropType.func,
+  name: PropType.string,
+  age: PropType.number,
+  changed: PropType.func
 };
 
 export default withClass(Person, classes.Person);

@@ -1,2 +1,5 @@
 Reference vs Primitive Values
 https://academind.com/learn/javascript/reference-vs-primitive-values/
+
+Prop types:
+npm install --save prop-types
