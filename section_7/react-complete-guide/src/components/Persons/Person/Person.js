@@ -13,7 +13,7 @@ class Person extends Component {
         <p onClick={this.props.click}>
           I'm {this.props.name} and I am {this.props.age} years old!
         </p>
-        <p>{this.props.children}</p>
+        <p key="i2">{this.props.children}</p>
         <input
           type="text"
           onChange={this.props.changed}
@@ -24,7 +24,7 @@ class Person extends Component {
   }
 };
 
-Person.prototype = {
+Person.PropType = {
   click: PropType.func,
   name: PropType.string,
   age: PropType.number,
